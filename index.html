@@ -1,138 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infrrd-Support-Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot UI</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   
   <link rel="icon" href= "https://app.uat.infrrd.cloud/favicon.ico" type="image/x-icon" />
-  <style>
-    body {
-      background: linear-gradient(to right, #20c997, #17a2b8);
-      color: white;
-      text-align: center;
-      padding-top: 50px;
-    }
-    .logo {
-      max-width: 100px;
-      margin-bottom: 20px;
-    }
-    .url-input-container {
-      display: none;
-      margin-top: 20px;
-    }
-    .radio-container {
-      display: none;
-      margin-top: 20px;
-    }
-	.form-inline .form-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-    .form-inline .form-group label {
-      margin-right: 10px;
-    }
-    .small-input {
-      width: 200px;
-    }
-  </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <img _ngcontent-qwj-c314="" class="logo" src="https://app.uat.infrrd.cloud/assets/images/logos/Infrrd-Logo-Transparent3.png" srcset="" alt="infrrd Logo">
-    <h1>Infrrd Pvt Ltd.</h1>
-    <h5>Support Testing Platform for iFrame Integration</h5>
-    <button id="loadButton" class="btn btn-primary mt-4">Sign In</button>
-    <div class="radio-container">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="urlOption" id="url1" value="https://app.uat.infrrd.cloud/queues/<QueueID>/documents/<DocumentID>/external?enableBIBot%3Dfalse">
-        <label class="form-check-label" for="url1">
-          UAT Testing Environment
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="urlOption" id="url2" value="https://app.eu.infrrd.cloud/queues/<QueueID>/documents/<DocumentID>/external?enableBIBot%3Dfalse">
-        <label class="form-check-label" for="url2">
-          EU PROD Environment
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="urlOption" id="url3" value="https://app.us.infrrd.cloud/queues/<QueueID>/documents/<DocumentID>/external?enableBIBot%3Dfalse">
-        <label class="form-check-label" for="url3">
-          US PROD Environment
-        </label>
-      </div>
+    <div class="container">
+        <div class="row">
+            <span class="text1">Welcome </br>to</br>Infrrd</br> Smart ChatBot</span>
+            <span class="text2">Trial Version - M.16.07.24</span>
+
+        </div>
     </div>
-    <div class="url-input-container form-inline">
-      <div class="form-group">
-        <label for="queueIdInput">Queue ID &nbsp; &nbsp; &nbsp; </label>
-        <input type="text" id="queueIdInput" class="form-control small-input" placeholder="Enter Queue ID">
-      </div>
-      <div class="form-group">
-        <label for="documentIdInput">Document ID</label>
-        <input type="text" id="documentIdInput" class="form-control small-input" placeholder="Enter Document ID">
-      </div>
-      <button id="viewIframeButton" class="btn btn-secondary mt-2">View External Correction Page</button>
+    <div class="chat-container" id="registration-container">
+        <div class="chat-header">
+            <img _ngcontent-qwj-c314="" class="logo" src="https://app.uat.infrrd.cloud/assets/images/logos/Infrrd-Logo-Transparent3.png" srcset="" alt="infrrd Logo">
+    <h5>Hello! Please share a bit about yourself</h5>
+        </div>
+        <div class="chat-body">
+            <form id="registration-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+                <label for="issue">Issue in Brief:</label>
+                <textarea id="issue" required></textarea><br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    let popupWindow;
 
-    document.getElementById('loadButton').addEventListener('click', function() {
-      var selectedOption = prompt("Choose a site URL:\n1. UAT Testing Environment\n2. EU PROD Environment\n3. US PROD Environment");
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <div class="chat-header">
+            <h2>ChatBot</h2>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-footer">
+            <select id="query-select">
+                <option value="">Select your query...</option>
+                <option value="query1">How do I reset my password?</option>
+                <option value="query2">What should I do if I can’t log in?</option>
+                <option value="query3">What should I do if I encounter an error message?</option>
+                <option value="query4">How do I contact customer support?</option>
+                <option value="query5">Is my data secure on this platform?</option>
+                <option value="query6">Can I access the application from my mobile device?</option>
+                <option value="query7">How do I log out of my account?</option>
+                <option value="query8">How can I provide feedback about the application?</option>
+            </select>
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
 
-      if (selectedOption) {
-        var siteUrl;
-        switch(selectedOption) {
-          case '1':
-            siteUrl = 'https://app.uat.infrrd.cloud/login';
-            break;
-          case '2':
-            siteUrl = 'https://app.eu.infrrd.cloud/login';
-            break;
-          case '3':
-            siteUrl = 'https://app.us.infrrd.cloud/login';
-            break;
-          default:
-            alert("Invalid option selected.");
-            return;
-        }
-        
-        popupWindow = window.open(siteUrl, 'popupWindow', 'width=800,height=600,scrollbars=yes');
-        if (popupWindow) {
-          popupWindow.focus();
-          // Change button text and show radio buttons
-          this.style.display = 'none';
-          document.querySelector('.radio-container').style.display = 'block';
-          document.querySelector('.url-input-container').style.display = 'block';
-        } else {
-          alert('Popup blocked! Please allow popups for this website.');
-        }
-      }
-    });
-
-    document.getElementById('viewIframeButton').addEventListener('click', function() {
-      var selectedUrlTemplate = document.querySelector('input[name="urlOption"]:checked');
-      var queueId = document.getElementById('queueIdInput').value;
-      var documentId = document.getElementById('documentIdInput').value;
-
-      if (selectedUrlTemplate && queueId && documentId) {
-        var inputUrl = selectedUrlTemplate.value.replace('<QueueID>', queueId).replace('<DocumentID>', documentId);
-        if (popupWindow) {
-          popupWindow.location.href = inputUrl;
-        } else {
-          alert('Popup window is not open.');
-        }
-      } else {
-        alert('Please select a URL and enter both Queue ID and Document ID');
-      }
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
