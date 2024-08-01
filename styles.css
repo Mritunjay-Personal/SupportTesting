@@ -26,10 +26,11 @@ body {
     padding: 10px;
     text-align: center;
 }
+
 .logo {
     max-width: 100px;
     margin-bottom: 20px;
-  }
+}
 
 .chat-body {
     padding: 20px;
@@ -40,6 +41,7 @@ body {
 
 .chat-footer {
     display: flex;
+    align-items: center;  /* Ensure items are centered vertically */
     padding: 10px;
     background-color: #f1f1f1;
     border-top: 1px solid #ccc;
@@ -49,7 +51,9 @@ body {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
+    margin-right: 50px;  /* Add some space between the dropdown and the button */
+    max-width: calc(100% - 150px);  /* Adjust the max-width to leave space for the button */
 }
 
 #send-btn {
@@ -58,8 +62,8 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin-left: 10px;
     border-radius: 4px;
+    flex-shrink: 0;  /* Ensure the button doesn't shrink */
 }
 
 #send-btn:hover {
@@ -76,7 +80,6 @@ form input, form textarea, form button {
     padding: 10px;
     margin-top: 5px;
 }
-
 
 .text1 {
     color: white;
