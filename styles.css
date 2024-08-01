@@ -52,7 +52,7 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin-right: 50px;  /* Add some space between the dropdown and the button */
+    margin-right: 30px;  /* Add some space between the dropdown and the button */
     max-width: calc(100% - 150px);  /* Adjust the max-width to leave space for the button */
 }
 
