@@ -1,0 +1,12 @@
+{
+    "queries": [
+        { "text": "How do I reset my password?", "query": "query1", "response": "To reset your password, go to the login page, click on 'Forgot Password?' and follow the instructions sent to your registered email." },
+        { "text": "What should I do if I can’t log in?", "query": "query2", "response": "Check if you are entering the correct username and password. If you’ve forgotten your password, use the 'Forgot Password?' option. If the issue persists, contact support." },
+        { "text": "What should I do if I encounter an error message?", "query": "query3", "response": "Take a note of the error message and try refreshing the page. If the issue continues, please report it to customer support with details." },
+        { "text": "How do I contact customer support?", "query": "query4", "response": "Just drop one email - 'support-idp@infrrd.ai' and our support representative will reach out to you" },
+        { "text": "Is my data secure on this platform?", "query": "query5", "response": "Yes, we use encryption and comply with data protection regulations to ensure your data is secure. Please refer to our privacy policy for more details." },
+        { "text": "Can I access the application from my mobile device?", "query": "query6", "response": "Our IDP Platform is more suitable with the Desktop browser. However, it can be accessed from any mobile device through your web browser" },
+        { "text": "How do I log out of my account?", "query": "query7", "response": "To log out, click on the top right corner and select the 'Log Out' option." },
+        { "text": "How can I provide feedback about the application?", "query": "query8", "response": "We welcome your feedback! You can submit your suggestions through the email - rahulapte@infrrd.ai or +91-087654315" }
+    ]
+}
